@@ -57,7 +57,7 @@ RUN apt update && apt upgrade -y && \
     && rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp
 
 RUN pip3 install --upgrade pip setuptools
-RUN git clone -b master https://github.com/FeriEXP/JisooXRobot /root/JisooX
+RUN git clone -b master https://github.com/Askarbot/SkyzuXRobot /root/JisooX
 WORKDIR /root/JisooX
 COPY ./JisooX/sample_config.py ./JisooX/config.py* /root/JisooX/JisooX/
 ENV PATH="/home/bot/bin:$PATH"
