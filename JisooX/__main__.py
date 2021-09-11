@@ -161,12 +161,6 @@ def start(bot: Bot, update: Update, args: List[str]):
             elif args[0][1:].isdigit() and "rules" in IMPORTED:
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
-else:
-            send_start(bot, update)
-    else:
-        update.effective_message.reply_text("Heya,{} Here..\nHow can I help you? 🙂".format(bot.first_name),reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="⚜️Help",url="t.me/{}?start=help".format(bot.username))]]))
-
 
 def send_start(bot, update):
     #Try to remove old message
