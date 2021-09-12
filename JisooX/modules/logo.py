@@ -30,12 +30,12 @@ async def lego(event):
     fname2 = "Jisoo.png"
     img.save(fname2, "png")
     await memek.edit("`Uploading`")
-    await tbot.send_file(event.chat_id, fname2, caption="Made By @JisooXRobot")
+    await tbot.send_file(event.chat_id, fname2, caption="Made By @skyzumusicbot")
     if os.path.exists(fname2):
             os.remove(fname2)
             await memek.delete()
  except Exception as e:
-   await event.reply(f'Error Report @AnosSupport, {e}')
+   await event.reply(f'Error Report @fourBrothersgroup, {e}')
 
 
 file_help = os.path.basename(__file__)
