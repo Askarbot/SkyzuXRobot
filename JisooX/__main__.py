@@ -264,6 +264,10 @@ def help_button(bot: Bot, update: Update):
         else:
             LOGGER.exception("Exception in help buttons. %s", str(query.data))
 
+@run_async
+def get_help(bot: Bot, update: Update):
+    chat = update.effective_chat  # type: Optional[Chat]
+    args = update.effective_message.text.split(None, 1)
 
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
