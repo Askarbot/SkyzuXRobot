@@ -51,7 +51,7 @@ RUN_STRINGS = (
 )
 
 SLAP_stella_TEMPLATES = (
-    "Jika kau menamparku sekali lagi, Feri akan membunuhmu.",
+    "Jika kau menamparku sekali lagi, Skyzu akan membunuhmu.",
     "Anak Kampang.",
     [
         "Saya membungkam Anda Sebentar.", #normal reply
