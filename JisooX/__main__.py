@@ -216,6 +216,18 @@ def error_callback(bot, update, error):
 
 
 @run_async
+def get_help(bot: Bot, update: Update):
+    chat = update.effective_chat  # type: Optional[Chat]
+    args = update.effective_message.text.split(None, 1)
+
+    # ONLY send help in PM
+    if chat.type != chat.PRIVATE:
+
+        update.effective_message.reply_text("Contact me in PM to get the list of possible commands.",
+                                            
+        return
+
+@run_async
 def help_button(bot: Bot, update: Update):
     query = update.callback_query
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
