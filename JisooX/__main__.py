@@ -265,19 +265,6 @@ def help_button(bot: Bot, update: Update):
             LOGGER.exception("Exception in help buttons. %s", str(query.data))
 
 
-@run_async
-def get_help(bot: Bot, update: Update):
-    chat = update.effective_chat  # type: Optional[Chat]
-    args = update.effective_message.text.split(None, 1)
-
-    # ONLY send help in PM
-    if chat.type != chat.PRIVATE:
-
-        update.effective_message.reply_text("Contact me in PM to get the list of possible commands.",
-                                            reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="[► Help ◄]",url="t.me/{}?start=help".format(bot.username))],  
-                                                [InlineKeyboardButton(text="[► Creator ◄]",url="https://t.me/skyzuuuu")]]))
-        return
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
